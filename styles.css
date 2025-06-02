@@ -56,7 +56,7 @@ header{
     justify-content: center;
 }
 .choice{
-    border: 6px solid rgb(160, 98, 17);
+    border: 6px solid #5C4033;
     padding: 10px;
     margin: 40px 20px;
     display: inline-block;
