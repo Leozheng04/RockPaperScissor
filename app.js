@@ -30,7 +30,17 @@ function win(userChoice,computerChoice){
     userScore_span.innerHTML = userScore;
     const smallUserWord = "<sup><small>user</small></sup>";
     const smallComWord = "<sup><small>comp</small></sup>";
-    result_p.innerHTML = `${convertToword(userChoice)}${smallUserWord} beats ${convertToword(computerChoice)}${smallComWord}. You win! 🔥`;
+    switch(userChoice + computerChoice){
+        case "rs":
+            result_p.innerHTML = `${convertToword(userChoice)}${smallUserWord} breaks ${convertToword(computerChoice)}${smallComWord}. You win! 🔥`;
+            break;
+        case "pr":
+            result_p.innerHTML = `${convertToword(userChoice)}${smallUserWord} covers ${convertToword(computerChoice)}${smallComWord}. You win! 🔥`;
+            break;
+        case "sp":
+            result_p.innerHTML = `${convertToword(userChoice)}${smallUserWord} cuts ${convertToword(computerChoice)}${smallComWord}. You win! 🔥`;
+        case "pr":
+    }
     document.getElementById(userChoice).classList.add("green-glow");
     setTimeout(() => document.getElementById(userChoice).classList.remove("green-glow"), 600);
 }
@@ -40,7 +50,16 @@ function lose(userChoice,computerChoice){
     computerScore_span.innerHTML = computerScore;
     const smallUserWord = "<sup><small>user</small></sup>";
     const smallComWord = "<sup><small>comp</small></sup>";
-    result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} beats ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
+    switch(userChoice + computerChoice){
+        case "rs":
+            result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} breaks ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
+            break;
+        case "pr":
+            result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} covers ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
+        case "sp":
+            result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} cuts ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
+        case "pr":
+    }
     document.getElementById(userChoice).classList.add("red-glow");
     setTimeout(() => document.getElementById(userChoice).classList.remove("red-glow"), 600);
 }
