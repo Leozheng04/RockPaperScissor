@@ -39,7 +39,7 @@ function win(userChoice,computerChoice){
             break;
         case "sp":
             result_p.innerHTML = `${convertToword(userChoice)}${smallUserWord} cuts ${convertToword(computerChoice)}${smallComWord}. You win! 🔥`;
-        case "pr":
+            break;
     }
     document.getElementById(userChoice).classList.add("green-glow");
     setTimeout(() => document.getElementById(userChoice).classList.remove("green-glow"), 600);
@@ -51,14 +51,15 @@ function lose(userChoice,computerChoice){
     const smallUserWord = "<sup><small>user</small></sup>";
     const smallComWord = "<sup><small>comp</small></sup>";
     switch(userChoice + computerChoice){
-        case "rs":
+        case "sr":
             result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} breaks ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
             break;
-        case "pr":
+        case "rp":
             result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} covers ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
-        case "sp":
+            break;
+        case "ps":
             result_p.innerHTML = `${convertToword(computerChoice)}${smallComWord} cuts ${convertToword(userChoice)}${smallUserWord}. You lose! 😭`;
-        case "pr":
+            break;
     }
     document.getElementById(userChoice).classList.add("red-glow");
     setTimeout(() => document.getElementById(userChoice).classList.remove("red-glow"), 600);
